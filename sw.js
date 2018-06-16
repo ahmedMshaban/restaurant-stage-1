@@ -1,8 +1,10 @@
-restaurantsCache = 'restaurants-v2';
+let restaurantsCache = 'restaurants-v2';
+
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(restaurantsCache).then(function(cache) {
+      // A list of local resources we want to cache.
       const sources = [
         '/',
         '/index.html',
@@ -28,6 +30,7 @@ self.addEventListener('install', function(event) {
   );
 });
 
+// The fetch handler serves responses
 self.addEventListener('fetch', function (event) {
     console.log(event.request);
     event.respondWith(
@@ -39,6 +42,7 @@ self.addEventListener('fetch', function (event) {
     );
 });
 
+// The activate handler that cleaning up old caches.
 self.addEventListener('activate', function (event) {
     event.waitUntil(
         caches.keys().then(function (cacheNames) {
