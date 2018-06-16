@@ -50,7 +50,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 
 #footer {
   background-color: #444;
-  color: #aaa;
+  color: #fff;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px 0;
@@ -165,10 +165,6 @@ nav h1 a:hover {
   width: 200px;
 }
 
-.filter-options option {
-  height: 50px;
-}
-
 .filter-options .container {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -176,6 +172,11 @@ nav h1 a:hover {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.filter-options select:focus,
+#restaurants-list li a:focus  {
+  border: 3px solid orange;
 }
 
 #neighborhoods-select {
